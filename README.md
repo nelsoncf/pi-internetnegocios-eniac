@@ -1,8 +1,7 @@
-# Meat - Angular Application
+# Julio Bravin Store - Angular Application
 
-Este respositório contém a implementação da aplicação feita no curso de Angular. O bundle para começar o seu projeto está [aqui].
+Repositorio contém o projeto Julio Bravin Store desenvovido para a Fsculdade Eniac
 
-[aqui]: https://github.com/cod3rcursos/meat-app-starter
 
 ## 1. Passos para começar
 
@@ -16,22 +15,4 @@ Este respositório contém a implementação da aplicação feita no curso de An
 
 ## 2. Iniciando o Backend
 
-### Instalando o json-server
-
-`npm install -g json-server`
-
-### Iniciando o serviço (raiz da aplicação)
-
-`json-server db.json`
-
-## Goodies
-
-Expressões regulares usadas na validação de formulários
-
-### Email Regex
-
-`/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i`
-
-### Number Regex
-
-`/^[0-9]*$/`
+`nodemon --watch backend backend/dist/server.js`

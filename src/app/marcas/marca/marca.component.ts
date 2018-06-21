@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations'
 
-import {Restaurant} from './restaurant.model'
+import {Marca} from './marca.model'
 
 @Component({
-  selector: 'mt-restaurant',
-  templateUrl: './restaurant.component.html',
+  selector: 'mt-marca',
+  templateUrl: './marca.component.html',
   animations: [
-    trigger('restaurantAppeared', [
+    trigger('marcaAppeared', [
       state('ready', style({opacity: 1})),
       transition('void => ready', [
         style({opacity: 0, transform: 'translate(-30px, -10px)'}),
@@ -16,11 +16,11 @@ import {Restaurant} from './restaurant.model'
     ])
   ]
 })
-export class RestaurantComponent implements OnInit {
+export class MarcaComponent implements OnInit {
 
-  restaurantState = 'ready'
+  marcaState = 'ready'
 
-  @Input() restaurant: Restaurant
+  @Input() marca: Marca
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
-import {RestaurantsService} from '../../restaurants/restaurants.service'
+import {MarcasService} from '../../marcas/marcas.service'
 
 import {Observable} from 'rxjs/Observable'
 
@@ -12,12 +12,12 @@ export class ReviewsComponent implements OnInit {
 
   reviews: Observable<any>
 
-  constructor(private restaurantsService: RestaurantsService,
+  constructor(private marcasService: MarcasService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.reviews = this.restaurantsService
-      .reviewsOfRestaurant(this.route.parent.snapshot.params['id'])
+    this.reviews = this.marcasService
+      .reviewsOfMarca(this.route.parent.snapshot.params['id'])
   }
 
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations'
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms'
 
-import {Restaurant} from './restaurant/restaurant.model'
-import {RestaurantsService} from './restaurants.service'
+import {Marca} from './marca/marca.model'
+import {MarcasService} from './marcas.service'
 
 import 'rxjs/add/operator/switchMap'
 import 'rxjs/add/operator/do'
@@ -14,32 +14,32 @@ import 'rxjs/add/observable/from'
 import {Observable} from 'rxjs/Observable'
 
 @Component({
-  selector: 'mt-restaurants',
-  templateUrl: './restaurants.component.html',
+  selector: 'mt-marcas',
+  templateUrl: './marcas.component.html',
   animations: [
     trigger('toggleSearch', [
       state('hidden', style({
         opacity: 0,
-        "max-height": "0px"
+        'max-height': '0px'
       })),
       state('visible', style({
         opacity: 1,
-        "max-height": "70px",
-        "margin-top": "20px"
+        'max-height': '70px',
+        'margin-top': '20px'
       })),
       transition('* => *', animate('250ms 0s ease-in-out'))
     ])
   ]
 })
-export class RestaurantsComponent implements OnInit {
+export class MarcasComponent implements OnInit {
 
   searchBarState = 'hidden'
-  restaurants: Restaurant[]
+  marcas: Marca[]
 
   searchForm: FormGroup
   searchControl: FormControl
 
-  constructor(private restaurantsService: RestaurantsService,
+  constructor(private marcasService: MarcasService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -53,16 +53,16 @@ export class RestaurantsComponent implements OnInit {
         .debounceTime(500)
         .distinctUntilChanged()
         .switchMap(searchTerm =>
-          this.restaurantsService
-            .restaurants(searchTerm)
-            .catch(error=>Observable.from([])))
-        .subscribe(restaurants => this.restaurants = restaurants)
+          this.marcasService
+            .marcas(searchTerm)
+            .catch(error => Observable.from([])))
+        .subscribe(marcas => this.marcas = marcas)
 
-    this.restaurantsService.restaurants()
-      .subscribe(restaurants => this.restaurants = restaurants)
+    this.marcasService.marcas()
+      .subscribe(marcas => this.marcas = marcas)
   }
 
-  toggleSearch(){
+  toggleSearch() {
     this.searchBarState = this.searchBarState === 'hidden' ? 'visible' : 'hidden'
   }
 

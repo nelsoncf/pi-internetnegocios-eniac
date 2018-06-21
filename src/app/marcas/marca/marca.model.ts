@@ -1,4 +1,4 @@
-export interface Restaurant {
+export interface Marca {
 
   id: string
   name: string

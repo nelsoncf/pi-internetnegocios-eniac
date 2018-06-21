@@ -1,7 +1,7 @@
 <!-- INíCIO do CONTEÚDO -->
       <section class="content-header">
         <h1>
-          Todos os Restaurantes
+          Todos os Marcas
           <a (click)="toggleSearch()" class="search-link pull-right">
             <span *ngIf="iptSearch.value"><small>"{{iptSearch.value}}"</small></span> <i class="fa fa-search"></i>
           </a>
@@ -25,10 +25,10 @@
       <section class="content">
 
         <div class="row">
-                <div *ngFor="let restaurant of restaurants" class="col-sm-6 col-xs-12">
-                    <mt-restaurant [restaurant]="restaurant"></mt-restaurant>
+                <div *ngFor="let marca of marcas" class="col-sm-6 col-xs-12">
+                    <mt-marca [marca]="marca"></mt-marca>
                 </div>
-                <div *ngIf="restaurants?.length === 0" class="col-xs-12">
+                <div *ngIf="marcas?.length === 0" class="col-xs-12">
                   <p class="lead text-center">
                     Não foram encontrados itens para a sua busca.
                   </p>

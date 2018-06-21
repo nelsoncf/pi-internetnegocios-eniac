@@ -1,10 +1,10 @@
-import { MeatPage } from './app.po';
+import { JBStorePage } from './app.po';
 
-describe('meat App', function() {
-  let page: MeatPage;
+describe('jbstore App', function() {
+  let page: JBStorePage;
 
   beforeEach(() => {
-    page = new MeatPage();
+    page = new JBStorePage();
   });
 
   it('should display message saying app works', () => {

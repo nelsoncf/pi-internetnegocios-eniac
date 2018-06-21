@@ -8,6 +8,23 @@ body {
   color: inherit;
 }
 
+.topcolor {
+  background: #000;
+}
+
+.nav>li>a:hover, .nav>li>a:active, .nav>li>a:focus {
+  color: #000;
+  background:#ecce63;
+}
+
+.topcolor ul li a {
+  color: rgba(255, 255, 255, .8) !important;
+}
+
+.topcolor ul li a:hover {
+  color: rgba(0, 0, 0, .8) !important;
+}
+
 /*
  * Component: Place Info Box
  * -------------------

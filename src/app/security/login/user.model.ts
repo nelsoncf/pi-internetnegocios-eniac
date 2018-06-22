@@ -4,5 +4,6 @@ export interface User {
     email: string,
     password: string,
     cpf: string,
-    accessToken: string
+    accessToken: string,
+    profile: any
 }

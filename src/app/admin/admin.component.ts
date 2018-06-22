@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order/order.model';
 import { AdminService } from './admin.service'
+import { LoginService } from '../security/login/login.service'
+import { User } from '../security/login/user.model';
 
 @Component({
   selector: 'mt-admin',
@@ -10,11 +12,14 @@ export class AdminComponent implements OnInit {
 
   pedidos: Order[]
   moneyTexto: string
+  isAdmin: Boolean
 
-  constructor(private adminService: AdminService) { }
+  constructor(
+    private adminService: AdminService,
+    private loginService: LoginService
+  ) { }
 
   ngOnInit() {
-
     this.adminService.pedidos()
       .subscribe(pedidos => this.pedidos = pedidos)
 
@@ -34,6 +39,5 @@ export class AdminComponent implements OnInit {
         break
     }
   }
-
 
 }

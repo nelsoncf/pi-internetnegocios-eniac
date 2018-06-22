@@ -29,7 +29,7 @@ export const ROUTES: Routes = [
   {path: 'order-summary', component: OrderSummaryComponent},
   {path: 'sobre', loadChildren: './about/about.module#AboutModule'},
   {path: 'registro', component: RegistroComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', component: AdminComponent, canLoad: [LoggedInGuard], canActivate: [LoggedInGuard]},
   {path: '**', component: NotFoundComponent}
 
 ]

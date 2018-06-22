@@ -1,20 +1,7 @@
-<!-- <div class="menu-item-info-box" [@menuItemAppeared]="menuItemState">
-    <span class="menu-item-info-box-icon">
-      <img [src]="menuItem.imagePath"></span>
-
-    <div class="menu-item-info-box-content">
-      <span class="menu-item-info-box-text">{{menuItem.name}}</span>
-      <span class="menu-item-info-box-detail">{{menuItem.description}}</span>
-      <span class="menu-item-info-box-price">{{menuItem.price | currency: 'BRL': true}}</span>
-      <a (click)="emitAddEvent()" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
-    </div>
-    <!- /.info-box-content 
-  </div> -->
-
 
   <div class="col-sm-6 col-md-4" [@menuItemAppeared]="menuItemState">
       <div class="thumbnail">
-        <img class="" [src]="menuItem.imagePath">
+        <img class="" [src]="menuItem?.imagePath">
         <hr>
         <div class="caption">
           <h3 style="margin-top: 0">{{menuItem.name}}</h3>

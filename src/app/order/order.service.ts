@@ -46,6 +46,7 @@ export class OrderService {
   checkOrder(order: Order): Observable<string> {
 
     return this.http.post<Order>(`${JBS_API}/orders`, order)
+                    // tslint:disable-next-line:no-shadowed-variable
                     .map(order => order.id)
   }
 

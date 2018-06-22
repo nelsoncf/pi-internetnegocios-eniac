@@ -8,5 +8,8 @@
           <a (click)="login()">Entrar</a>
         </ng-template>
       </li>
+      <li class="user user-menu" *ngIf="!isLoggedIn()">
+            <a [routerLink]="['/registro']">Registrar</a>
+        </li>
     </ul>
   </div>

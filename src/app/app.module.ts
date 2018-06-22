@@ -25,7 +25,8 @@ import {SharedModule} from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
-import { RegistroComponent } from './registro/registro.component'
+import { RegistroComponent } from './registro/registro.component';
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RegistroComponent } from './registro/registro.component'
     NotFoundComponent,
     LoginComponent,
     UserDetailComponent,
-    RegistroComponent
+    RegistroComponent,
+    AdminComponent
    ],
   imports: [
     BrowserModule,

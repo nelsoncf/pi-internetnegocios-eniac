@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do'
 import 'rxjs/add/operator/filter'
-import {MEAT_API} from '../../app.api'
+import {JBS_API} from '../../app.api'
 import { User } from './user.model'
 import { Router, NavigationEnd } from '@angular/router';
 import { unescapeIdentifier } from '@angular/compiler';
@@ -26,7 +26,7 @@ export class LoginService {
     }
 
     login(email: string, password: string): Observable<any> {
-        return this.http.post<User>(`${MEAT_API}/users/authenticate`,
+        return this.http.post<User>(`${JBS_API}/users/authenticate`,
                             {email: email, password: password})
                         .do(user => this.user = user)
     }

@@ -8,7 +8,7 @@ import {ShoppingCartService} from '../marca-detail/shopping-cart/shopping-cart.s
 import {CartItem} from '../marca-detail/shopping-cart/cart-item.model'
 import {Order, OrderItem} from './order.model'
 
-import {MEAT_API} from '../app.api'
+import {JBS_API} from '../app.api'
 
 import { LoginService } from '../security/login/login.service'
 
@@ -45,7 +45,7 @@ export class OrderService {
 
   checkOrder(order: Order): Observable<string> {
 
-    return this.http.post<Order>(`${MEAT_API}/orders`, order)
+    return this.http.post<Order>(`${JBS_API}/orders`, order)
                     .map(order => order.id)
   }
 

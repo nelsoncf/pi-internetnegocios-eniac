@@ -10,6 +10,7 @@ import {NotFoundComponent} from './not-found/not-found.component'
 import { LoginComponent } from './security/login/login.component'
 import { LoggedInGuard } from './security/loggedIn.guard';
 import { RegistroComponent } from './registro/registro.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 export const ROUTES: Routes = [
@@ -28,5 +29,7 @@ export const ROUTES: Routes = [
   {path: 'order-summary', component: OrderSummaryComponent},
   {path: 'sobre', loadChildren: './about/about.module#AboutModule'},
   {path: 'registro', component: RegistroComponent},
+  {path: 'admin', component: AdminComponent},
   {path: '**', component: NotFoundComponent}
+
 ]

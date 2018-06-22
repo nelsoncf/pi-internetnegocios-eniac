@@ -8,6 +8,8 @@ import {OrderService} from './order.service'
 import {CartItem} from '../marca-detail/shopping-cart/cart-item.model'
 import {Order, OrderItem} from './order.model'
 
+import {ShoppingCartService} from '../marca-detail/shopping-cart/shopping-cart.service'
+
 import 'rxjs/add/operator/do'
 
 @Component({
@@ -28,13 +30,13 @@ export class OrderComponent implements OnInit {
 
   paymentOptions: RadioOption[] = [
     {label: 'Dinheiro', value: 'MON'},
-    {label: 'Cartão de Débito', value: 'DEB'},
-    {label: 'Cartão Refeição', value: 'REF'}
+    {label: 'Cartão de Crédito', value: 'CRE'},
   ]
 
   constructor(private orderService: OrderService,
               private router: Router,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
     this.orderForm = this.formBuilder.group({
@@ -86,6 +88,8 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order) {
+    order.itemsValue = this.itemsValue()
+    order.total = this.shoppingCartService.total() + 8
     order.orderItems = this.cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.price, item.menuItem.name))
     this.orderService.checkOrder(order)

@@ -19,6 +19,7 @@ import { LoggedInGuard } from '../security/loggedIn.guard';
 import { LeaveOrderGuard } from '../order/leave-order.guard';
 import { AuthInterceptor } from '../security/auth.interceptor';
 import { RegistroService } from '../registro/registro.service';
+import { AdminService } from '../admin/admin.service';
 
 
 
@@ -40,6 +41,7 @@ export class SharedModule {
         NotificationService,
         LoginService,
         RegistroService,
+        AdminService,
         LoggedInGuard,
         LeaveOrderGuard,
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

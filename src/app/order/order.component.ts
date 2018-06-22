@@ -24,7 +24,7 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8
 
-  orderId: string 
+  orderId: string
 
   paymentOptions: RadioOption[] = [
     {label: 'Dinheiro', value: 'MON'},
@@ -86,7 +86,7 @@ export class OrderComponent implements OnInit {
 
   checkOrder(order: Order) {
     order.orderItems = this.cartItems()
-      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
+      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.price, item.menuItem.name))
     this.orderService.checkOrder(order)
       .do((orderId: string) => {
         this.orderId = orderId

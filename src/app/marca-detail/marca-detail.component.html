@@ -1,12 +1,37 @@
-<!-- INÍCIO DO CONTEÚDO -->
-      <section class="content-header">
-        <h1>
+<div class="blue-bg">
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+          <img class="box-img-detail" [src]="marca?.imagePath" />
+      </div>
+      <div class="col-md-10">
+        <h1>{{marca?.name}} <span class="pull-right"><i class="fa fa-star"></i> {{marca?.rating}}</span></h1>
+        <hr>
+        <h4>{{marca?.about}}</h4>
+        <dl class="">
+            <dt>Categoria</dt>
+            <dd>{{marca?.category}}</dd>
+          </dl>
+      </div>
+      
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
 
-        </h1>
-      </section>
+<div class="container">
+  <div class="row">
+    <br>
+      <router-outlet></router-outlet>
+  </div>
+</div>
 
+<!-- <div class="container">
 
-      <section class="content">
+      <section class="">
 
         <div class="row">
             <div class="col-xs-12">
@@ -16,7 +41,6 @@
 
                   <h3 class="box-title">{{marca?.name}}</h3><span class="pull-right"><i class="fa fa-star"></i> {{marca?.rating}}</span>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                   <div class="col-sm-3 col-xs-12" *ngIf="marca">
                     <img class="box-img-detail" [src]="marca?.imagePath" />
@@ -31,7 +55,6 @@
                     <dd>{{marca?.hours}}</dd>
                   </dl>
                 </div>
-                <!-- /.box-body -->
                 <div class="box-footer detail-footer">
                 <a class="pull-left" routerLinkActive="detail-active" [routerLink]="['menu']">
                    Menu
@@ -42,7 +65,6 @@
               </div>
               </div>
             </div>
-            <!-- /.col-xs-12 -->
 
         </div>
 
@@ -51,4 +73,5 @@
         </div>
 
       </section>
-      <!-- FIM DO CONTEÚDO -->
+
+    </div> -->

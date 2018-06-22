@@ -9,6 +9,7 @@ import {OrderSummaryComponent} from './order-summary/order-summary.component'
 import {NotFoundComponent} from './not-found/not-found.component'
 import { LoginComponent } from './security/login/login.component'
 import { LoggedInGuard } from './security/loggedIn.guard';
+import { RegistroComponent } from './registro/registro.component';
 
 
 export const ROUTES: Routes = [
@@ -25,6 +26,7 @@ export const ROUTES: Routes = [
   {path: 'order', loadChildren: './order/order.module#OrderModule',
     canLoad: [LoggedInGuard], canActivate: [LoggedInGuard]},
   {path: 'order-summary', component: OrderSummaryComponent},
-  {path: 'about', loadChildren: './about/about.module#AboutModule'},
+  {path: 'sobre', loadChildren: './about/about.module#AboutModule'},
+  {path: 'registro', component: RegistroComponent},
   {path: '**', component: NotFoundComponent}
 ]

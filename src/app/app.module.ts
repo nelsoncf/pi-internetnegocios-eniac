@@ -24,7 +24,8 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import {SharedModule} from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './security/login/login.component';
-import { UserDetailComponent } from './header/user-detail/user-detail.component'
+import { UserDetailComponent } from './header/user-detail/user-detail.component';
+import { RegistroComponent } from './registro/registro.component'
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
     OrderSummaryComponent,
     NotFoundComponent,
     LoginComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    RegistroComponent
    ],
   imports: [
     BrowserModule,

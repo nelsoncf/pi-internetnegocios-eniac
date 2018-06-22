@@ -9,6 +9,6 @@ describe('jbstore App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('mt works!');
+    expect(page.getParagraphText()).toEqual('jbstore works!');
   });
 });

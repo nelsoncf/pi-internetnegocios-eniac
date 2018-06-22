@@ -1,17 +1,36 @@
-<!-- INICIO DO CONTEUDO -->
-  <section class="content-header">
-  </section>
-
-  <section class="content">
-    <div class="jumbotron">
-      <h2>Pedido Conluído</h2>
-      <p>Seu pedido foi recebido pelo marcae. Prepare a mesa que a comida está chegando!</p>
-      <p><b>Avalie</b> sua experiência:</p>
-      <p><mt-rating (rated)="rate()"></mt-rating></p>
-      <p *ngIf="rated">
-        Obrigado pela sua avaliação!
-      </p>
+<div class="blue-bg">
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Pedido Conluído</h1>
+        <hr>
+      </div>
     </div>
+  </div>
+  <br>
+  <br>
+</div>
 
-  </section>
-  <!-- FIM DO CONTEUDO -->
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Olá, </h3>
+      <h4>Recebemos seu pedidom agora é só esperar que em breve seus produtos chegarão ao endereço informado.</h4>
+    </div>
+    <div class="col-md-6">
+      <div class="jumbotron">
+        <p>
+          <b>Avalie</b> sua experiência em nosso site:</p>
+        <p>
+          <mt-rating (rated)="rate()"></mt-rating>
+        </p>
+        <p *ngIf="rated">
+          Obrigado pela sua avaliação!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

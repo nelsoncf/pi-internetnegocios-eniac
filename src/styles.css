@@ -301,3 +301,7 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
     opacity: 0;
     max-height: 0px;
 }
+
+.content-wrapper {
+  background: #f2f2f2 !important
+}

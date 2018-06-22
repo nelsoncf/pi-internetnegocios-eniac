@@ -1,15 +1,19 @@
-<!-- INíCIO do CONTEÚDO -->
-<div class="container">
-      <section class="content-header">
-        <h1>
-          Todos os Marcas
-          <a (click)="toggleSearch()" class="search-link pull-right">
-            <span *ngIf="iptSearch.value"><small>"{{iptSearch.value}}"</small></span> <i class="fa fa-search"></i>
-          </a>
-        </h1>
-
-        <!-- barra de busca-->
-        <div class="row">
+<div class="blue-bg">
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <h1>
+                Todas as Marcas
+                <a (click)="toggleSearch()" class="search-link pull-right">
+                  <span *ngIf="iptSearch.value"><small>"{{iptSearch.value}}"</small></span> <i class="fa fa-search"></i>
+                </a>
+              </h1>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
           <div class="col-xs-12 search-bar" [@toggleSearch]="searchBarState">
             <form [formGroup]="searchForm">
               <div class="form-group">
@@ -19,14 +23,21 @@
             </form>
           </div>
         </div>
+    </div>
+    <br>
+    <br>
+  </div>
 
-      </section>
+
+
+<!-- INíCIO do CONTEÚDO -->
+<div class="container">
 
 
       <section class="content">
 
         <div class="row">
-                <div *ngFor="let marca of marcas" class="col-sm-6 col-xs-12">
+                <div *ngFor="let marca of marcas">
                     <mt-marca [marca]="marca"></mt-marca>
                 </div>
                 <div *ngIf="marcas?.length === 0" class="col-xs-12">

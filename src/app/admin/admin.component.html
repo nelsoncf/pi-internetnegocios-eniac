@@ -1,34 +1,41 @@
 <div class="container">
 
-<h1>Pedidos no site</h1>
 
-<div class="bs-example" data-example-id="striped-table">
-    <table class="table table-striped">
-       <thead>
-          <tr>
-             <th>#</th>
-             <th>Nome</th>
-             <th>Email</th>
-             <th>Endereco</th>
-             <th>Pagamento</th>
-             <th>Valor dos Itens</th>
-             <th>Frete</th>
-             <th>Valor Total</th>
-          </tr>
-       </thead>
-       <tbody>
-          <tr *ngFor="let pedido of pedidos; let i = index" >
-             <th scope="row">{{i + 1}}</th>
-             <td>{{pedido.name}}</td>
-             <td>{{pedido.email}}</td>
-             <td>{{pedido.address}} {{pedido.number}} {{pedido.optionalAddress}}</td>
-             <td *ngIf="pedido.paymentOption == 'MON'">Dinheiro</td>
-             <td *ngIf="pedido.paymentOption != 'MON'">Crédito</td>
-             <td>{{pedido.itensValue}}</td>
-             <td>R$ 8,00</td>
-             <td>{{pedido.total | currency: 'BRL': true}}</td>
-          </tr>
-       </tbody>
-    </table>
- </div>
-</div>
+<br>
+<br>
+<div class="panel panel-default">
+
+        <div class="panel-heading"><h1>Pedidos no site</h1></div>
+      
+        <div class="bs-example" data-example-id="striped-table">
+                <table class="table table-striped">
+                   <thead>
+                      <tr>
+                         <th>#</th>
+                         <th>Nome</th>
+                         <th>Email</th>
+                         <th>Endereco</th>
+                         <th>Pagamento</th>
+                         <th>Valor dos Itens</th>
+                         <th>Frete</th>
+                         <th>Valor Total</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                      <tr *ngFor="let pedido of pedidos; let i = index" >
+                         <th scope="row">{{i + 1}}</th>
+                         <td>{{pedido.name}}</td>
+                         <td>{{pedido.email}}</td>
+                         <td>{{pedido.address}} {{pedido.number}} {{pedido.optionalAddress}}</td>
+                         <td *ngIf="pedido.paymentOption == 'MON'">Dinheiro</td>
+                         <td *ngIf="pedido.paymentOption != 'MON'">Crédito</td>
+                         <td>{{pedido.itensValue}}</td>
+                         <td>R$ 8,00</td>
+                         <td>{{pedido.total | currency: 'BRL': true}}</td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+            </div>
+      </div>
+

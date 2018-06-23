@@ -6,6 +6,7 @@ import {JBS_API} from '../app.api'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 import {ErrorHandler} from '../app.error-handler'
+import { User } from '../security/login/user.model'
 
 @Injectable()
 export class AdminService {
@@ -27,6 +28,10 @@ export class AdminService {
 
     itensOfOrder(id: string): Observable<OrderItem[]> {
       return this.http.get<OrderItem[]>(`${JBS_API}/orders/${id}/orderItems`)
+    }
+
+    getUser(email: string) {
+      return this.http.get<User>(`${JBS_API}/users?email=${email}`)
     }
 
 }
